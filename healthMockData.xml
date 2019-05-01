@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HealthData [
+<!-- HealthKit Export Version: 8 -->
+<!ELEMENT HealthData (ExportDate,Me,(Record|Correlation|Workout|ActivitySummary|ClinicalRecord)*)>
+<!ATTLIST HealthData
+  locale CDATA #REQUIRED
+>
+<!ELEMENT ExportDate EMPTY>
+<!ATTLIST ExportDate
+  value CDATA #REQUIRED
+>
+<!ELEMENT Me EMPTY>
+<!ATTLIST Me
+  HKCharacteristicTypeIdentifierDateOfBirth         CDATA #REQUIRED
+  HKCharacteristicTypeIdentifierBiologicalSex       CDATA #REQUIRED
+  HKCharacteristicTypeIdentifierBloodType           CDATA #REQUIRED
+  HKCharacteristicTypeIdentifierFitzpatrickSkinType CDATA #REQUIRED
+>
+<!ELEMENT Record ((MetadataEntry|HeartRateVariabilityMetadataList)*)>
+<!ATTLIST Record
+  type          CDATA #REQUIRED
+  unit          CDATA #IMPLIED
+  value         CDATA #IMPLIED
+  sourceName    CDATA #REQUIRED
+  sourceVersion CDATA #IMPLIED
+  device        CDATA #IMPLIED
+  creationDate  CDATA #IMPLIED
+  startDate     CDATA #REQUIRED
+  endDate       CDATA #REQUIRED
+>
+<!-- Note: Any Records that appear as children of a correlation also appear as top-level records in this document. -->
+<!ELEMENT Correlation ((MetadataEntry|Record)*)>
+<!ATTLIST Correlation
+  type          CDATA #REQUIRED
+  sourceName    CDATA #REQUIRED
+  sourceVersion CDATA #IMPLIED
+  device        CDATA #IMPLIED
+  creationDate  CDATA #IMPLIED
+  startDate     CDATA #REQUIRED
+  endDate       CDATA #REQUIRED
+>
+<!ELEMENT Workout ((MetadataEntry|WorkoutEvent|WorkoutRoute)*)>
+<!ATTLIST Workout
+  workoutActivityType   CDATA #REQUIRED
+  duration              CDATA #IMPLIED
+  durationUnit          CDATA #IMPLIED
+  totalDistance         CDATA #IMPLIED
+  totalDistanceUnit     CDATA #IMPLIED
+  totalEnergyBurned     CDATA #IMPLIED
+  totalEnergyBurnedUnit CDATA #IMPLIED
+  sourceName            CDATA #REQUIRED
+  sourceVersion         CDATA #IMPLIED
+  device                CDATA #IMPLIED
+  creationDate          CDATA #IMPLIED
+  startDate             CDATA #REQUIRED
+  endDate               CDATA #REQUIRED
+>
+<!ELEMENT WorkoutEvent EMPTY>
+<!ATTLIST WorkoutEvent
+  type         CDATA #REQUIRED
+  date         CDATA #REQUIRED
+  duration     CDATA #IMPLIED
+  durationUnit CDATA #IMPLIED
+>
+<!ELEMENT WorkoutRoute ((MetadataEntry|Location)*)>
+<!ATTLIST WorkoutRoute
+  sourceName    CDATA #REQUIRED
+  sourceVersion CDATA #IMPLIED
+  device        CDATA #IMPLIED
+  creationDate  CDATA #IMPLIED
+  startDate     CDATA #REQUIRED
+  endDate       CDATA #REQUIRED
+>
+<!ELEMENT Location EMPTY>
+<!ATTLIST Location
+  date               CDATA #REQUIRED
+  latitude           CDATA #REQUIRED
+  longitude          CDATA #REQUIRED
+  altitude           CDATA #REQUIRED
+  horizontalAccuracy CDATA #REQUIRED
+  verticalAccuracy   CDATA #REQUIRED
+  course             CDATA #REQUIRED
+  speed              CDATA #REQUIRED
+>
+<!ELEMENT ActivitySummary EMPTY>
+<!ATTLIST ActivitySummary
+  dateComponents           CDATA #IMPLIED
+  activeEnergyBurned       CDATA #IMPLIED
+  activeEnergyBurnedGoal   CDATA #IMPLIED
+  activeEnergyBurnedUnit   CDATA #IMPLIED
+  appleExerciseTime        CDATA #IMPLIED
+  appleExerciseTimeGoal    CDATA #IMPLIED
+  appleStandHours          CDATA #IMPLIED
+  appleStandHoursGoal      CDATA #IMPLIED
+>
+<!ELEMENT MetadataEntry EMPTY>
+<!ATTLIST MetadataEntry
+  key   CDATA #REQUIRED
+  value CDATA #REQUIRED
+>
+<!-- Note: Heart Rate Variability records captured by Apple Watch may include an associated list of instantaneous beats-per-minute readings. -->
+<!ELEMENT HeartRateVariabilityMetadataList (InstantaneousBeatsPerMinute*)>
+<!ELEMENT InstantaneousBeatsPerMinute EMPTY>
+<!ATTLIST InstantaneousBeatsPerMinute
+  bpm  CDATA #REQUIRED
+  time CDATA #REQUIRED
+>
+<!ELEMENT ClinicalRecord EMPTY>
+<!ATTLIST ClinicalRecord
+  type              CDATA #REQUIRED
+  identifier        CDATA #REQUIRED
+  sourceName        CDATA #REQUIRED
+  sourceURL         CDATA #REQUIRED
+  fhirVersion       CDATA #REQUIRED
+  receivedDate      CDATA #REQUIRED
+  resourceFilePath  CDATA #REQUIRED
+>
+]>
+<HealthData locale="en_AU">
+ <ExportDate value="2019-02-25 13:01:46 +1100"/>
+ <Me HKCharacteristicTypeIdentifierDateOfBirth="1990-01-01" HKCharacteristicTypeIdentifierBiologicalSex="HKBiologicalSexFemale" HKCharacteristicTypeIdentifierBloodType="HKBloodTypeOPositive" HKCharacteristicTypeIdentifierFitzpatrickSkinType="HKFitzpatrickSkinTypeNotSet"/>
+ <Record type="HKQuantityTypeIdentifierBodyMassIndex" sourceName="RENPHO" sourceVersion="1" unit="count" creationDate="2019-02-28 19:02:28 +1100" startDate="2019-02-28 19:02:28 +1100" endDate="2019-02-28 19:02:28 +1100" value="10.0"/>
+ <Record type="HKQuantityTypeIdentifierBodyMassIndex" sourceName="RENPHO" sourceVersion="1" unit="count" creationDate="2019-03-01 09:03:01 +1100" startDate="2019-03-01 09:03:01 +1100" endDate="2019-03-01 09:03:01 +1100" value="10.0"/>
+ <Record type="HKQuantityTypeIdentifierBodyMassIndex" sourceName="RENPHO" sourceVersion="1" unit="count" creationDate="2019-03-02 19:03:02 +1100" startDate="2019-03-02 19:03:02 +1100" endDate="2019-03-02 19:03:02 +1100" value="10.0"/>
+  <Record type="HKQuantityTypeIdentifierBodyMass" sourceName="Health" sourceVersion="11.2.5" unit="kg" creationDate="2019-03-01 19:48:18 +1100" startDate="2019-03-01 19:48:00 +1100" endDate="2019-03-01 19:48:00 +1100" value="30">
+  <MetadataEntry key="HKWasUserEntered" value="1"/>
+ </Record>
+ <Record type="HKQuantityTypeIdentifierBodyMass" sourceName="Health" sourceVersion="11.2.5" unit="kg" creationDate="2019-03-02 00:38:57 +1100" startDate="2019-03-02 00:38:00 +1100" endDate="2019-03-02 00:38:00 +1100" value="31">
+  <MetadataEntry key="HKWasUserEntered" value="1"/>
+ </Record>
+ <Record type="HKQuantityTypeIdentifierBodyMass" sourceName="Health" sourceVersion="11.3" unit="kg" creationDate="2019-03-03 17:55:59 +1100" startDate="2019-03-03 17:55:00 +1100" endDate="2019-03-03 17:55:00 +1100" value="30">
+  <MetadataEntry key="HKWasUserEntered" value="1"/>
+ </Record>
+ <Record type="HKQuantityTypeIdentifierStepCount" sourceName="Health" unit="count" creationDate="2019-03-01 19:18:26 +1100" startDate="2019-03-01 21:38:37 +1100" endDate="2019-03-01 21:38:42 +1100" value="550"/>
+ <Record type="HKQuantityTypeIdentifierStepCount" sourceName="Health" unit="count" creationDate="2019-03-01 19:18:26 +1100" startDate="2019-03-01 21:43:39 +1100" endDate="2019-03-01 21:43:44 +1100" value="568"/>
+ <Record type="HKQuantityTypeIdentifierStepCount" sourceName="Health" unit="count" creationDate="2019-03-02 19:18:26 +1100" startDate="2019-03-02 21:49:46 +1100" endDate="2019-03-02 21:49:51 +1100" value="150"/>
+ <Record type="HKQuantityTypeIdentifierDistanceWalkingRunning" sourceName="Health" unit="km" creationDate="2019-03-01 17:21:47 +1100" startDate="2019-03-01 06:10:42 +1100" endDate="2019-03-01 06:10:44 +1100" value="0.00300109"/>
+ <Record type="HKQuantityTypeIdentifierDistanceWalkingRunning" sourceName="Health" unit="km" creationDate="2019-03-01 17:21:47 +1100" startDate="2019-03-01 06:10:44 +1100" endDate="2019-03-01 06:10:47 +1100" value="0.00300109"/>
+ <Record type="HKQuantityTypeIdentifierDistanceWalkingRunning" sourceName="Health" unit="km" creationDate="2019-03-01 17:21:47 +1100" startDate="2019-03-01 06:10:47 +1100" endDate="2019-03-01 06:10:49 +1100" value="0.00375109"/>
+ <Record type="HKQuantityTypeIdentifierBasalEnergyBurned" sourceName="RENPHO" sourceVersion="3" unit="kJ" creationDate="2019-03-01 09:49:31 +1100" startDate="2019-03-01 09:49:31 +1100" endDate="2019-03-01 09:49:31 +1100" value="5962.2"/>
+ <Record type="HKQuantityTypeIdentifierBasalEnergyBurned" sourceName="RENPHO" sourceVersion="1" unit="kJ" creationDate="2019-03-02 10:30:00 +1100" startDate="2019-03-02 10:30:00 +1100" endDate="2019-03-02 10:30:00 +1100" value="5978.94"/>
+ <Record type="HKQuantityTypeIdentifierBasalEnergyBurned" sourceName="RENPHO" sourceVersion="1" unit="kJ" creationDate="2019-03-03 10:25:28 +1100" startDate="2019-03-03 10:25:22 +1100" endDate="2019-03-03 10:25:22 +1100" value="5987.3"/>
+ <Record type="HKQuantityTypeIdentifierFlightsClimbed" sourceName="My iPhone" sourceVersion="12.1.2" device="&lt;&lt;HKDevice: 0x281a4c4b0&gt;, name:iPhone, manufacturer:Apple, model:iPhone, hardware:iPhone10,3, software:12.1.2&gt;" unit="count" creationDate="2019-03-01 00:52:34 +1100" startDate="2019-03-01 21:51:04 +1100" endDate="2019-03-01 21:51:37 +1100" value="2"/>
+ <Record type="HKQuantityTypeIdentifierFlightsClimbed" sourceName="My iPhone" sourceVersion="12.1.2" device="&lt;&lt;HKDevice: 0x281a4c410&gt;, name:iPhone, manufacturer:Apple, model:iPhone, hardware:iPhone10,3, software:12.1.2&gt;" unit="count" creationDate="2019-03-02 00:52:34 +1100" startDate="2019-03-02 00:26:34 +1100" endDate="2019-03-02 00:26:37 +1100" value="1"/>
+ <Record type="HKQuantityTypeIdentifierFlightsClimbed" sourceName="My iPhone" sourceVersion="12.1.2" device="&lt;&lt;HKDevice: 0x281a4d810&gt;, name:iPhone, manufacturer:Apple, model:iPhone, hardware:iPhone10,3, software:12.1.2&gt;" unit="count" creationDate="2019-03-03 08:28:31 +1100" startDate="2019-03-03 08:17:09 +1100" endDate="2019-03-03 08:17:40 +1100" value="1"/>
+  <Record type="HKQuantityTypeIdentifierNikeFuel" sourceName="Nike Training" sourceVersion="12191" unit="count" creationDate="2019-03-01 01:43:16 +1100" startDate="2019-03-01 01:12:39 +1100" endDate="2019-03-01 01:43:16 +1100" value="403"/>
+ <Record type="HKQuantityTypeIdentifierNikeFuel" sourceName="Nike Training" sourceVersion="12191" unit="count" creationDate="2019-03-02 04:24:00 +1100" startDate="2019-03-02 03:38:32 +1100" endDate="2019-03-02 04:24:00 +1100" value="643"/>
+ <Record type="HKQuantityTypeIdentifierNikeFuel" sourceName="Nike Training" sourceVersion="12191" unit="count" creationDate="2019-03-03 05:17:56 +1100" startDate="2019-03-03 05:02:42 +1100" endDate="2019-03-03 05:17:56 +1100" value="215"/>
+  <Workout workoutActivityType="HKWorkoutActivityTypeMixedMetabolicCardioTraining" duration="30" durationUnit="min" totalDistance="0" totalDistanceUnit="km" totalEnergyBurned="0" totalEnergyBurnedUnit="kJ" sourceName="Nike Training" sourceVersion="12290" creationDate="2019-03-01 05:01:34 +1100" startDate="2019-03-01 04:29:59 +1100" endDate="2019-03-01 05:01:34 +1100">
+  <MetadataEntry key="HKIndoorWorkout" value="1"/>
+  <MetadataEntry key="HKTimeZone" value="Australia/Sydney"/>
+ </Workout>
+ <Workout workoutActivityType="HKWorkoutActivityTypeMixedMetabolicCardioTraining" duration="45" durationUnit="min" totalDistance="0" totalDistanceUnit="km" totalEnergyBurned="0" totalEnergyBurnedUnit="kJ" sourceName="Nike Training" sourceVersion="12290" creationDate="2019-03-02 00:30:21 +1100" startDate="2019-03-02 23:45:14 +1100" endDate="2019-03-02 00:30:21 +1100">
+  <MetadataEntry key="HKIndoorWorkout" value="1"/>
+  <MetadataEntry key="HKTimeZone" value="Australia/Sydney"/>
+ </Workout>
+ <Workout workoutActivityType="HKWorkoutActivityTypeMixedMetabolicCardioTraining" duration="30" durationUnit="min" totalDistance="0" totalDistanceUnit="km" totalEnergyBurned="0" totalEnergyBurnedUnit="kJ" sourceName="Nike Training" sourceVersion="12290" creationDate="2019-03-03 05:35:37 +1100" startDate="2019-03-03 05:05:31 +1100" endDate="2019-03-03 05:35:37 +1100">
+  <MetadataEntry key="HKIndoorWorkout" value="1"/>
+  <MetadataEntry key="HKTimeZone" value="Australia/Sydney"/>
+ </Workout>
+</HealthData>
